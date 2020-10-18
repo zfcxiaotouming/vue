@@ -2,7 +2,9 @@ import axios from 'axios'
 
 class Http{
   constructor(base_url){
-    this.base_url = base_url;
+    if(base_url) {
+      this.base_url = base_url;
+    }
   }
 
   // 统一提供封装好的请求，项目的所有请求最终都是由这个函数处理
@@ -42,4 +44,4 @@ class Http{
   }
 }
 
-export default new Http('http://localhost:8080');
+export default new Http();
